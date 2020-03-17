@@ -4,7 +4,9 @@
 
 /*
 Este programa é uma modificação do programa "fork.c". O seu objetivo é demonstrar o uso da system call
-"exit()". Para isso é utilizado a função "_exit()", sendo que ela é a Wrapper Function do system call em questão.
+"exit()". Para isso é utilizado a função "_exit()", sendo que ela é a Wrapper Function da system call em questão.
+Obs: existe a função "exit()" que possui o mesmo nome da system call. Porém, ela não é uma primitiva das chamadas
+de sistema.
 
 A diferença entre esse programa e o anterior (fork.c) é que a saída "Hello world!(4)" é substituída por
 "Hello world from parent", e antes dessa saída ser executada, todos os processos que possuem first==0
