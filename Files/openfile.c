@@ -20,9 +20,8 @@ int main(int argc, char const *argv[])
 {
 	int fd;
 
-	fd=open("TextFile",2);
-	
-		write(fd,stdin,14);
-		close(3);
+	fd=open("TextFile",O_CREAT);
+	write(fd,stdin,14);
+	close(fd);
 	return 0;
 }
