@@ -19,9 +19,11 @@ O programa chama a função "open()" que abre um arquivo e escreve "Hello World"
 int main(int argc, char const *argv[])
 {
 	int fd;
+	int aha;
 
 	fd=open("TextFile",O_CREAT);
-	write(fd,stdin,14);
-	close(fd);
+	write(fd,"Hello World", 20*sizeof(char));
+	aha = close(fd);
+	printf("Está retornando: %d \n", aha);
 	return 0;
 }
