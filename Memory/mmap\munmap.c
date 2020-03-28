@@ -13,7 +13,7 @@ int main(){
 
 	size_t pagesize = getpagesize();
 
-	char *p;
+	char *p;// vai conter  o endereço da regiao mapeada
 
 	p = mmap(sbrk(0)//pega um lugar endereço igual ou maior ao progan break
 		,pagesize*5,
@@ -21,11 +21,11 @@ int main(){
 		 ,MAP_ANON|MAP_PRIVATE//
 		 ,0,0);
 
-    strcpy(p, "Empoleon Nº395\nIt swims as fast as a jet boat. The edges of its wings are sharp and can slice apart drifting ice.");
+    strcpy(p, "Empoleon Nº395\nIt swims as fast as a jet boat. The edges of its wings are sharp and can slice apart drifting ice.");//ecreve na regiao mapeada
 
-    printf("%s\n", p);
+    printf("%s\n", p);//le da regiao mapead
 
-    munmap(p,pagesize);
+    munmap(p,pagesize);//desmapeia a regiao mapeada
 
     return 0;
 	}
